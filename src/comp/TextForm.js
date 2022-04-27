@@ -39,20 +39,20 @@ export default function TextForm(props) {
 					<textarea
 						className="form-control"
 						style={{
-							backgroundColor: props.mode === 'dark' ? 'white' : 'black',
+							backgroundColor: props.mode,
 						}}
 						value={text}
 						id="textbox"
 						onChange={handleOnChange}
 						rows="8"
 					></textarea>
-					<button type="button" class="btn btn-primary my-2 mx-1" onClick={handleUprClick}>
+					<button type="button" className="btn btn-primary my-2 mx-1" onClick={handleUprClick}>
 						To Uppercase
 					</button>
-					<button type="button" class="btn btn-primary my-2 mx-1" onClick={handleLwrClick}>
+					<button type="button" className="btn btn-primary my-2 mx-1" onClick={handleLwrClick}>
 						To Lowercase
 					</button>
-					<button type="button" class="btn btn-primary my-2 mx-1" onClick={handleClear}>
+					<button type="button" className="btn btn-primary my-2 mx-1" onClick={handleClear}>
 						Clear
 					</button>
 				</div>
