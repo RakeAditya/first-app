@@ -46,21 +46,36 @@ export default function TextForm(props) {
 						onChange={handleOnChange}
 						rows="8"
 					></textarea>
-					<button type="button" className="btn btn-primary my-2 mx-1" onClick={handleUprClick}>
+					{/* dsiabled use krke button disable kie h agr text length mera 0 h */}
+					<button type="button" disabled={text.length === 0} className="btn btn-primary my-2 mx-1" onClick={handleUprClick}>
 						To Uppercase
 					</button>
-					<button type="button" className="btn btn-primary my-2 mx-1" onClick={handleLwrClick}>
+					<button type="button" disabled={text.length === 0} className="btn btn-primary my-2 mx-1" onClick={handleLwrClick}>
 						To Lowercase
 					</button>
-					<button type="button" className="btn btn-primary my-2 mx-1" onClick={handleClear}>
+					<button type="button" disabled={text.length === 0} className="btn btn-primary my-2 mx-1" onClick={handleClear}>
 						Clear
 					</button>
 				</div>
 			</div>
 			<div className="summary  container" style={{ color: props.mode === 'dark' ? 'white' : 'gray' }}>
-				<h3>Word count {text.split(' ').length}</h3>
+				<h3>
+					Word count{' '}
+					{
+						text.split(' ').filter((ele) => {
+							return ele.length !== 0;
+						}).length
+					}
+				</h3>
 				<h3>Letter count {text.length}</h3>
-				<h3>Time to read {0.0008 * text.split(' ').length} minutes</h3>
+				<h3>
+					Time to read{' '}
+					{0.0008 *
+						text.split(' ').filter((ele) => {
+							return text.length !== 0;
+						}).length}{' '}
+					minutes
+				</h3>
 			</div>
 		</>
 	);

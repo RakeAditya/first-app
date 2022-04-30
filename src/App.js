@@ -11,7 +11,7 @@ import { Routes, Route } from 'react-router-dom';
 // import { Switch } from 'react-router-dom';
 
 function App() {
-	const [mode, setMode] = useState('dark');
+	const [mode, setMode] = useState('white');
 	//mode variable banae h jo ki dark aur light set krega iskelie isko props ki tarah pass kr die h
 	const toggleMode = () => {
 		if (mode === 'dark') {
@@ -48,7 +48,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/text" element={<TextForm heading="Enter the text" mode={mode} />} />
-				<Route path="/about" element={<About />} />
+				<Route path="/about" element={<About mode={mode} />} />
 			</Routes>
 		</>
 	);
