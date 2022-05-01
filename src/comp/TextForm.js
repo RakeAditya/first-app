@@ -56,6 +56,10 @@ export default function TextForm(props) {
 					<button type="button" disabled={text.length === 0} className="btn btn-primary my-2 mx-1" onClick={handleClear}>
 						Clear
 					</button>
+
+					<button className="btn btn-primary my-2 mx-1" onclick={`responsiveVoice.speak('${text}');`} type="button" value="Play">
+						Play
+					</button>
 				</div>
 			</div>
 			<div className="summary  container" style={{ color: props.mode === 'dark' ? 'white' : 'gray' }}>
