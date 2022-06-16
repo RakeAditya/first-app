@@ -19,13 +19,13 @@ function App() {
 			document.body.style.backgroundColor = 'white';
 
 			//showalert ko call krke hm yaha p alert ki valuye define krenge
-			showAlert('Dark mode is enabled', 'success');
+			showAlert('Light mode is enabled', 'success');
 		} else {
 			setMode('dark');
 			document.body.style.backgroundColor = 'black';
 			document.body.style.color = 'black';
 			//document.title= dasrk mode s tab m present title change hoga
-			showAlert('Light mode is enabled', 'success');
+			showAlert('Dark mode is enabled', 'success');
 		}
 	};
 	//alert k lie ek variable banaenge jo update hota rhega
